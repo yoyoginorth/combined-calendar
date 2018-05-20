@@ -5,7 +5,7 @@
  * Time: 21:35
  */
 
-require_once 'Calendar.php';
+require_once 'calendar.php';
 
 function show_calendar()
 {

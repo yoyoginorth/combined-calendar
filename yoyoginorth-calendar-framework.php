@@ -21,7 +21,7 @@ class CalendarFramework
 
     public function __construct()
     {
-        load_plugin_textdomain(self::TEXT_DOMAIN, false, dirname(plugin_basename(__FILE__)) . '/' . self::LANG_DIR);
+        load_plugin_textdomain( self::TEXT_DOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/' . self::LANG_DIR );
     }
 }
 
