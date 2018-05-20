@@ -1,17 +1,35 @@
 <?php
 /**
- * Author: ryotsun
- * Date: 2018/05/20
- * Time: 22:03
+ * BaseCalendar class in Calendar Framework
+ *
+ * @package WordPress
+ * @subpackage Calendar Framework
+ * @since 1.0.0
+ * @version 1.0.0
  */
 
+/**
+ * Class BaseCalendar
+ */
 class BaseCalendar {
+	/**
+	 * @var $year
+	 */
 	protected $year;
+	/**
+	 * @var $month
+	 */
 	protected $month;
+	/**
+	 * @var $start_of_week
+	 */
 	protected $start_of_week;
 
 	const WEEK_DAYS = 7;
 
+	/**
+	 * BaseCalendar constructor.
+	 */
 	function __construct() {
 		$this->set_date( date( 'Y' ), date( 'n' ) );
 		$this->set_start_of_week( get_option( 'start_of_week' ) );
@@ -96,8 +114,8 @@ class BaseCalendar {
 	 * @return string
 	 */
 	protected function get_cal_with_html( $cal ) {
-		$tag = '<table>';
-		$tag .= '<caption>' . __( date( "F", strtotime( $this->month . '/1/' . $this->year ) ), CalendarFramework::TEXT_DOMAIN ) . '</caption>';
+		$tag  = '<table>';
+		$tag .= '<caption>' . __( date( 'F', strtotime( $this->month . '/1/' . $this->year ) ), CalendarFramework::TEXT_DOMAIN ) . '</caption>';
 		$tag .= '<tr>';
 
 		$week_header = $this->get_week_header();
