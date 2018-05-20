@@ -9,6 +9,6 @@ require_once 'calendar.php';
 
 function show_calendar()
 {
-    $cal = new Calendar;
-    return $cal->show_cal();
+	$cal = new Calendar;
+	return $cal->show_cal();
 }

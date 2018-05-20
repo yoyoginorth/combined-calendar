@@ -16,13 +16,13 @@ include "includes/functions.php";
 
 class CalendarFramework
 {
-    const TEXT_DOMAIN = 'yoyoginorth-calendar-framework';
-    const LANG_DIR  = 'languages';
+	const TEXT_DOMAIN = 'yoyoginorth-calendar-framework';
+	const LANG_DIR = 'languages';
 
-    public function __construct()
-    {
-        load_plugin_textdomain( self::TEXT_DOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/' . self::LANG_DIR );
-    }
+	public function __construct()
+	{
+		load_plugin_textdomain(self::TEXT_DOMAIN, false, dirname(plugin_basename(__FILE__)) . '/' . self::LANG_DIR);
+	}
 }
 
 new CalendarFramework;
