@@ -7,6 +7,5 @@
 
 require_once 'base-calendar.php';
 
-class Calendar extends BaseCalendar
-{
+class Calendar extends BaseCalendar {
 }

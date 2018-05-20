@@ -12,15 +12,13 @@ Text Domain:  yoyoginorth-calendar-framework
 Domain Path:  /languages
 */
 
-include "includes/functions.php";
+include 'includes/functions.php';
 
-class CalendarFramework
-{
+class CalendarFramework {
 	const TEXT_DOMAIN = 'yoyoginorth-calendar-framework';
-	const LANG_DIR = 'languages';
+	const LANG_DIR    = 'languages';
 
-	public function __construct()
-	{
+	public function __construct() {
 		load_plugin_textdomain( self::TEXT_DOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/' . self::LANG_DIR );
 	}
 }

@@ -7,8 +7,7 @@
 
 require_once 'calendar.php';
 
-function show_calendar()
-{
+function show_calendar() {
 	$cal = new Calendar;
 	return $cal->show_cal();
 }

@@ -5,17 +5,15 @@
  * Time: 22:03
  */
 
-class BaseCalendar
-{
+class BaseCalendar {
 	protected $year;
 	protected $month;
 	protected $start_of_week;
 
 	const WEEK_DAYS = 7;
 
-	function __construct()
-	{
-		$this->set_date( date( "Y" ), date( "n" ) );
+	function __construct() {
+		$this->set_date( date( 'Y' ), date( 'n' ) );
 		$this->set_start_of_week( get_option( 'start_of_week' ) );
 	}
 
@@ -23,17 +21,15 @@ class BaseCalendar
 	 * @param $year
 	 * @param $month
 	 */
-	protected function set_date( $year, $month )
-	{
-		$this->year = $year;
+	protected function set_date( $year, $month ) {
+		$this->year  = $year;
 		$this->month = $month;
 	}
 
 	/**
 	 * @param $day
 	 */
-	protected function set_start_of_week( $day )
-	{
+	protected function set_start_of_week( $day ) {
 		$this->start_of_week = $day;
 	}
 
@@ -42,14 +38,13 @@ class BaseCalendar
 	 * @param $month
 	 * @return string
 	 */
-	public function show_cal( $year = null, $month = null )
-	{
+	public function show_cal( $year = null, $month = null ) {
 		if ( $year && $month ) {
 			$this->set_date( $year, $month );
 		}
 
 		$cal_array = $this->get_completed_cal_array();
-		$cal_html = $this->get_cal_with_html( $cal_array );
+		$cal_html  = $this->get_cal_with_html( $cal_array );
 
 		return $cal_html;
 	}
@@ -57,8 +52,7 @@ class BaseCalendar
 	/**
 	 * @return array Calendar Array
 	 */
-	protected function get_completed_cal_array()
-	{
+	protected function get_completed_cal_array() {
 		$cal = $this->get_cal_array();
 		return $cal;
 	}
@@ -66,31 +60,30 @@ class BaseCalendar
 	/**
 	 * @return array Specific Month
 	 */
-	protected function get_cal_array()
-	{
-		$cal = array();
-		$week = 0;
+	protected function get_cal_array() {
+		$cal        = array();
+		$week       = 0;
 		$date_count = date( 'j', mktime( 0, 0, 0, $this->month + 1, 0, $this->year ) );
 
 		for ( $i = 1; $i <= $date_count; $i++ ) {
-			$w = date('w', mktime( 0, 0, 0, $this->month, $i, $this->year ) );
+			$w = date( 'w', mktime( 0, 0, 0, $this->month, $i, $this->year ) );
 
 			// set empty string until comes 1st date
 			if ( $i === 1 ) {
 				if ( $this->start_of_week < $w ) {
 					for ( $j = 0; $j < $w - $this->start_of_week; $j++ ) {
-						$cal[$week][] = '';
+						$cal[ $week ][] = '';
 					}
-				} else if ( $this->start_of_week > $w ) {
+				} elseif ( $this->start_of_week > $w ) {
 					for ( $j = 0; $j < self::WEEK_DAYS - $this->start_of_week + $w; $j++ ) {
-						$cal[$week][] = '';
+						$cal[ $week ][] = '';
 					}
 				}
 			}
 
-			$cal[$week][] = $i;
+			$cal[ $week ][] = $i;
 
-			if ( count( $cal[$week] ) === self::WEEK_DAYS ) {
+			if ( count( $cal[ $week ] ) === self::WEEK_DAYS ) {
 				$week++;
 			}
 		}
@@ -102,22 +95,21 @@ class BaseCalendar
 	 * @param $cal
 	 * @return string
 	 */
-	protected function get_cal_with_html( $cal )
-	{
+	protected function get_cal_with_html( $cal ) {
 		$tag = '<table>';
-		$tag .= '<caption>' . __( date( "F", strtotime( $this->month . "/1/" . $this->year ) ), CalendarFramework::TEXT_DOMAIN ) . '</caption>';
+		$tag .= '<caption>' . __( date( "F", strtotime( $this->month . '/1/' . $this->year ) ), CalendarFramework::TEXT_DOMAIN ) . '</caption>';
 		$tag .= '<tr>';
 
 		$week_header = $this->get_week_header();
 		for ( $i = 0; $i < self::WEEK_DAYS; $i++ ) {
-			$tag .= '<th>' . $week_header[$i] . '</th>';
+			$tag .= '<th>' . $week_header[ $i ] . '</th>';
 		}
 		$tag .= '</tr>';
 		for ( $i = 0, $l = count( $cal ); $i < $l; $i++ ) {
 			$tag .= '<tr>';
 
-			for ( $j = 0, $m = count( $cal[$i] ); $j < $m; $j++ ) {
-				$tag .= '<td>' . $cal[$i][$j] . '</td>';
+			for ( $j = 0, $m = count( $cal[ $i ] ); $j < $m; $j++ ) {
+				$tag .= '<td>' . $cal[ $i ][ $j ] . '</td>';
 			}
 
 			$tag .= '</tr>';
@@ -130,16 +122,15 @@ class BaseCalendar
 	/**
 	 * @return array
 	 */
-	protected function get_week_header()
-	{
+	protected function get_week_header() {
 		$week_header = array(
-			__( "Sunday", CalendarFramework::TEXT_DOMAIN ),
-			__( "Monday", CalendarFramework::TEXT_DOMAIN ),
-			__( "Tuesday", CalendarFramework::TEXT_DOMAIN ),
-			__( "Wednesday", CalendarFramework::TEXT_DOMAIN ),
-			__( "Thursday", CalendarFramework::TEXT_DOMAIN ),
-			__( "Friday", CalendarFramework::TEXT_DOMAIN ),
-			__( "Saturday", CalendarFramework::TEXT_DOMAIN ),
+			__( 'Sunday', CalendarFramework::TEXT_DOMAIN ),
+			__( 'Monday', CalendarFramework::TEXT_DOMAIN ),
+			__( 'Tuesday', CalendarFramework::TEXT_DOMAIN ),
+			__( 'Wednesday', CalendarFramework::TEXT_DOMAIN ),
+			__( 'Thursday', CalendarFramework::TEXT_DOMAIN ),
+			__( 'Friday', CalendarFramework::TEXT_DOMAIN ),
+			__( 'Saturday', CalendarFramework::TEXT_DOMAIN ),
 		);
 
 		$tmp_suffix_array = array();
