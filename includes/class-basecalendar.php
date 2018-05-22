@@ -13,14 +13,20 @@
  */
 class BaseCalendar {
 	/**
+	 * Year
+	 *
 	 * @var $year
 	 */
 	protected $year;
 	/**
+	 * Month
+	 *
 	 * @var $month
 	 */
 	protected $month;
 	/**
+	 * Start of week
+	 *
 	 * @var $start_of_week
 	 */
 	protected $start_of_week;
@@ -36,8 +42,10 @@ class BaseCalendar {
 	}
 
 	/**
-	 * @param $year
-	 * @param $month
+	 * Set year and month
+	 *
+	 * @param int $year year.
+	 * @param int $month month.
 	 */
 	protected function set_date( $year, $month ) {
 		$this->year  = $year;
@@ -45,16 +53,20 @@ class BaseCalendar {
 	}
 
 	/**
-	 * @param $day
+	 * Set start of week
+	 *
+	 * @param int $day day of the week.
 	 */
 	protected function set_start_of_week( $day ) {
 		$this->start_of_week = $day;
 	}
 
 	/**
-	 * @param $year
-	 * @param $month
-	 * @return string
+	 * Show calendar
+	 *
+	 * @param int $year year.
+	 * @param int $month month.
+	 * @return string html
 	 */
 	public function show_cal( $year = null, $month = null ) {
 		if ( $year && $month ) {
@@ -68,6 +80,8 @@ class BaseCalendar {
 	}
 
 	/**
+	 * Get completed calendar array, not only specific month (in near future)
+	 *
 	 * @return array Calendar Array
 	 */
 	protected function get_completed_cal_array() {
@@ -76,6 +90,8 @@ class BaseCalendar {
 	}
 
 	/**
+	 * Get specific month's calendar
+	 *
 	 * @return array Specific Month
 	 */
 	protected function get_cal_array() {
@@ -86,8 +102,8 @@ class BaseCalendar {
 		for ( $i = 1; $i <= $date_count; $i++ ) {
 			$w = date( 'w', mktime( 0, 0, 0, $this->month, $i, $this->year ) );
 
-			// set empty string until comes 1st date
-			if ( $i === 1 ) {
+			// set empty string until comes 1st date.
+			if ( 1 === $i ) {
 				if ( $this->start_of_week < $w ) {
 					for ( $j = 0; $j < $w - $this->start_of_week; $j++ ) {
 						$cal[ $week ][] = '';
@@ -110,12 +126,14 @@ class BaseCalendar {
 	}
 
 	/**
-	 * @param $cal
+	 * Get calendar HTML to display
+	 *
+	 * @param array $cal calendar array.
 	 * @return string
 	 */
 	protected function get_cal_with_html( $cal ) {
 		$tag  = '<table>';
-		$tag .= '<caption>' . __( date( 'F', strtotime( $this->month . '/1/' . $this->year ) ), CalendarFramework::TEXT_DOMAIN ) . '</caption>';
+		$tag .= '<caption>' . $this->month . '</caption>';
 		$tag .= '<tr>';
 
 		$week_header = $this->get_week_header();
@@ -123,10 +141,10 @@ class BaseCalendar {
 			$tag .= '<th>' . $week_header[ $i ] . '</th>';
 		}
 		$tag .= '</tr>';
-		for ( $i = 0, $l = count( $cal ); $i < $l; $i++ ) {
+		for ( $i = 0; $i < count( $cal ); $i++ ) {
 			$tag .= '<tr>';
 
-			for ( $j = 0, $m = count( $cal[ $i ] ); $j < $m; $j++ ) {
+			for ( $j = 0; $j < count( $cal[ $i ] ); $j++ ) {
 				$tag .= '<td>' . $cal[ $i ][ $j ] . '</td>';
 			}
 
@@ -138,17 +156,19 @@ class BaseCalendar {
 	}
 
 	/**
+	 * Get week header (Sunday to Saturday)
+	 *
 	 * @return array
 	 */
 	protected function get_week_header() {
 		$week_header = array(
-			__( 'Sunday', CalendarFramework::TEXT_DOMAIN ),
-			__( 'Monday', CalendarFramework::TEXT_DOMAIN ),
-			__( 'Tuesday', CalendarFramework::TEXT_DOMAIN ),
-			__( 'Wednesday', CalendarFramework::TEXT_DOMAIN ),
-			__( 'Thursday', CalendarFramework::TEXT_DOMAIN ),
-			__( 'Friday', CalendarFramework::TEXT_DOMAIN ),
-			__( 'Saturday', CalendarFramework::TEXT_DOMAIN ),
+			__( 'Sunday', 'yoyoginorth-calendar-framework' ),
+			__( 'Monday', 'yoyoginorth-calendar-framework' ),
+			__( 'Tuesday', 'yoyoginorth-calendar-framework' ),
+			__( 'Wednesday', 'yoyoginorth-calendar-framework' ),
+			__( 'Thursday', 'yoyoginorth-calendar-framework' ),
+			__( 'Friday', 'yoyoginorth-calendar-framework' ),
+			__( 'Saturday', 'yoyoginorth-calendar-framework' ),
 		);
 
 		$tmp_suffix_array = array();

@@ -8,6 +8,9 @@
  * @version 1.0.0
  */
 
+/**
+ * Require file
+ */
 require_once 'class-basecalendar.php';
 
 /**

@@ -8,12 +8,17 @@
  * @version 1.0.0
  */
 
+/**
+ * Require file
+ */
 require_once 'class-calendar.php';
 
 /**
+ * Display simple calendar
+ *
  * @return string Output calendar html
  */
-function show_calendar() {
+function yoyoginorth_show_calendar() {
 	$cal = new Calendar;
 	return $cal->show_cal();
 }

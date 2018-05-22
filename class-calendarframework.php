@@ -19,7 +19,10 @@
  * Domain Path:  /languages
  */
 
-include 'includes/functions.php';
+/**
+ * Require file
+ */
+require_once 'includes/functions.php';
 
 /**
  * Class CalendarFramework
