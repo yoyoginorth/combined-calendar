@@ -17,6 +17,7 @@ require_once 'class-calendar.php';
  * Display simple calendar
  *
  * @return string Output calendar html
+ * @since 1.0.0
  */
 function yoyoginorth_show_calendar() {
 	$cal = new Calendar;

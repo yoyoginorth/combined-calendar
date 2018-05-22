@@ -16,18 +16,21 @@ class BaseCalendar {
 	 * Year
 	 *
 	 * @var $year
+	 * @since 1.0.0
 	 */
 	protected $year;
 	/**
 	 * Month
 	 *
 	 * @var $month
+	 * @since 1.0.0
 	 */
 	protected $month;
 	/**
 	 * Start of week
 	 *
 	 * @var $start_of_week
+	 * @since 1.0.0
 	 */
 	protected $start_of_week;
 
@@ -46,6 +49,7 @@ class BaseCalendar {
 	 *
 	 * @param int $year year.
 	 * @param int $month month.
+	 * @since 1.0.0
 	 */
 	protected function set_date( $year, $month ) {
 		$this->year  = $year;
@@ -56,6 +60,7 @@ class BaseCalendar {
 	 * Set start of week
 	 *
 	 * @param int $day day of the week.
+	 * @since 1.0.0
 	 */
 	protected function set_start_of_week( $day ) {
 		$this->start_of_week = $day;
@@ -67,6 +72,7 @@ class BaseCalendar {
 	 * @param int $year year.
 	 * @param int $month month.
 	 * @return string html
+	 * @since 1.0.0
 	 */
 	public function show_cal( $year = null, $month = null ) {
 		if ( $year && $month ) {
@@ -83,6 +89,7 @@ class BaseCalendar {
 	 * Get completed calendar array, not only specific month (in near future)
 	 *
 	 * @return array Calendar Array
+	 * @since 1.0.0
 	 */
 	protected function get_completed_cal_array() {
 		$cal = $this->get_cal_array();
@@ -93,6 +100,7 @@ class BaseCalendar {
 	 * Get specific month's calendar
 	 *
 	 * @return array Specific Month
+	 * @since 1.0.0
 	 */
 	protected function get_cal_array() {
 		$cal        = array();
@@ -130,6 +138,7 @@ class BaseCalendar {
 	 *
 	 * @param array $cal calendar array.
 	 * @return string
+	 * @since 1.0.0
 	 */
 	protected function get_cal_with_html( $cal ) {
 		$tag  = '<table>';
@@ -159,6 +168,7 @@ class BaseCalendar {
 	 * Get week header (Sunday to Saturday)
 	 *
 	 * @return array
+	 * @since 1.0.0
 	 */
 	protected function get_week_header() {
 		$week_header = array(
