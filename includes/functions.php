@@ -1,14 +1,25 @@
 <?php
 /**
- * Author: ryotsun
- * Date: 2018/05/20
- * Time: 21:35
+ * Functions in Calendar Framework
+ *
+ * @package WordPress
+ * @subpackage Calendar Framework
+ * @since 1.0.0
+ * @version 1.0.0
  */
 
-require_once 'Calendar.php';
+/**
+ * Require file
+ */
+require_once 'class-calendar.php';
 
-function show_calendar()
-{
-    $cal = new Calendar;
-    return $cal->show_cal();
+/**
+ * Display simple calendar
+ *
+ * @return string Output calendar html
+ * @since 1.0.0
+ */
+function yoyoginorth_show_calendar() {
+	$cal = new Calendar;
+	return $cal->show_cal();
 }
