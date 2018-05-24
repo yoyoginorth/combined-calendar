@@ -79,19 +79,19 @@ class BaseCalendar {
 			$this->set_date( $year, $month );
 		}
 
-		$cal_array = $this->get_completed_cal_array();
+		$cal_array = $this->get_combined_cal_array();
 		$cal_html  = $this->get_cal_with_html( $cal_array );
 
 		return $cal_html;
 	}
 
 	/**
-	 * Get completed calendar array, not only specific month (in near future)
+	 * Get combined calendar array, not only specific month (in near future)
 	 *
 	 * @return array Calendar Array
 	 * @since 1.0.0
 	 */
-	protected function get_completed_cal_array() {
+	protected function get_combined_cal_array() {
 		$cal = $this->get_cal_array();
 		return $cal;
 	}
