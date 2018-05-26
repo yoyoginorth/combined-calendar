@@ -23,6 +23,7 @@
  * Require file
  */
 require_once 'includes/functions.php';
+require_once 'admin/basecalendar-admin.php';
 
 /**
  * Class CalendarFramework
