@@ -1,4 +1,4 @@
-# calendarframework [![Build Status](https://travis-ci.org/yoyoginorth/calendarframework.svg?branch=master)](https://travis-ci.org/yoyoginorth/calendarframework)
+# calendarframework [![Build Status](https://travis-ci.org/yoyoginorth/combined-calendar.svg?branch=master)](https://travis-ci.org/yoyoginorth/calendarframework)
 the simple calender system!
 
 ## Usage
