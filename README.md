@@ -32,3 +32,11 @@ $ ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpc
 ```bash
 $ ./vendor/bin/phpcs
 ```
+
+## How to update Language file?
+1. Update `languages/combined-calendar.pot`
+1. Update `languages/combined-calendar-ja.po`
+1. Re-Generate `languages/combined-calendar-ja.mo`
+```bash
+$ msgfmt -o languages/combined-calendar-ja.mo languages/combined-calendar-ja.po
+```

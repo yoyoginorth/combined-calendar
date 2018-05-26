@@ -1,17 +1,17 @@
 <?php
 /**
- * BaseCalendar class in Calendar Framework
+ * Base_Calendar class in Combined Calendar
  *
  * @package WordPress
- * @subpackage Calendar Framework
+ * @subpackage Combined Calendar
  * @since 1.0.0
  * @version 1.0.0
  */
 
 /**
- * Class BaseCalendar
+ * Class Base_Calendar
  */
-class BaseCalendar {
+class Base_Calendar {
 	/**
 	 * Year
 	 *
@@ -172,13 +172,13 @@ class BaseCalendar {
 	 */
 	protected function get_week_header() {
 		$week_header = array(
-			__( 'Sunday', 'yoyoginorth-calendar-framework' ),
-			__( 'Monday', 'yoyoginorth-calendar-framework' ),
-			__( 'Tuesday', 'yoyoginorth-calendar-framework' ),
-			__( 'Wednesday', 'yoyoginorth-calendar-framework' ),
-			__( 'Thursday', 'yoyoginorth-calendar-framework' ),
-			__( 'Friday', 'yoyoginorth-calendar-framework' ),
-			__( 'Saturday', 'yoyoginorth-calendar-framework' ),
+			__( 'Sunday', 'combined-calendar' ),
+			__( 'Monday', 'combined-calendar' ),
+			__( 'Tuesday', 'combined-calendar' ),
+			__( 'Wednesday', 'combined-calendar' ),
+			__( 'Thursday', 'combined-calendar' ),
+			__( 'Friday', 'combined-calendar' ),
+			__( 'Saturday', 'combined-calendar' ),
 		);
 
 		$tmp_suffix_array = array();
