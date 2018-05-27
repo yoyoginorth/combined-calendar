@@ -2,7 +2,7 @@
 /**
  * Class CalendarTest
  *
- * @package Yoyoginorth_Calendar_Framework
+ * @package Combined Calendar
  */
 
 /**
@@ -23,7 +23,9 @@ class CalendarTest extends WP_UnitTestCase {
 	 * @since 1.0.0
 	 */
 	public function setUp() {
-		$this->object = new Calendar;
+		parent::setUp();
+		$this->object = new Calendar();
+		$this->copy_language_files();
 	}
 
 	/**
@@ -139,6 +141,40 @@ class CalendarTest extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Check each values of day of the week in header (Japanese).
+	 *
+	 * @throws ReflectionException Reflection exception.
+	 * @since 1.0.0
+	 */
+	function test_get_week_header_ja() {
+		$reflection = new \ReflectionClass( $this->object );
+		switch_to_locale( 'ja_JP' );
+
+		// Set start of week.
+		$method = $reflection->getMethod( 'set_start_of_week' );
+		$method->setAccessible( true );
+		$method->invoke( $this->object, 1 );
+
+		$expected_array = array(
+			'月',
+			'火',
+			'水',
+			'木',
+			'金',
+			'土',
+			'日',
+		);
+
+		$method = $reflection->getMethod( 'get_week_header' );
+		$method->setAccessible( true );
+		$array = $method->invoke( $this->object );
+
+		restore_current_locale();
+
+		$this->assertSame( $expected_array, $array );
+	}
+
+	/**
 	 * Initialize variables
 	 *
 	 * @param Reflection $reflection reflection instance.
@@ -147,7 +183,7 @@ class CalendarTest extends WP_UnitTestCase {
 	 * @param int        $start_of_week start_of_week.
 	 * @since 1.0.0
 	 */
-	function initialize( $reflection, $year, $month, $start_of_week ) {
+	private function initialize( $reflection, $year, $month, $start_of_week ) {
 		// Set year and month.
 		$method = $reflection->getMethod( 'set_date' );
 		$method->setAccessible( true );
@@ -157,5 +193,20 @@ class CalendarTest extends WP_UnitTestCase {
 		$method = $reflection->getMethod( 'set_start_of_week' );
 		$method->setAccessible( true );
 		$method->invoke( $this->object, $start_of_week );
+	}
+
+	/**
+	 * Copy plugin language files to wp tests directory.
+	 */
+	private function copy_language_files() {
+		$_tests_dir = getenv( 'WP_TESTS_DIR' );
+		$_from_dir  = dirname( dirname( __FILE__ ) ) . '/languages';
+		$_to_dir    = $_tests_dir . '/data/languages';
+
+		// Put ja_JP.mo file.
+		touch( $_to_dir . '/ja_JP.mo' );
+
+		// Copy *-ja.mo then rename to *-ja_JP.mo .
+		copy( $_from_dir . '/combined-calendar-ja.mo', $_to_dir . '/plugins/combined-calendar-ja_JP.mo' );
 	}
 }
