@@ -5,11 +5,11 @@ the simple calender system!
 ### Show Calendar
 - Add the following to show calendar.
 ```php
-echo yoyoginorth_show_calendar();
+echo combined_calendar_show_calendar();
 ```
 or
 ```php
-<?php echo yoyoginorth_show_calendar(); ?>
+<?php echo combined_calendar_show_calendar(); ?>
 ```
 
 ## How to execute unit test?
