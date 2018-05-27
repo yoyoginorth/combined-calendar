@@ -15,6 +15,11 @@ or
 ## How to execute unit test?
 Just run the following command.
 
+### Install wp-tests
+```bash
+$ ./bin/install-wp-tests.sh <db-name> <db-user> <db-pass>
+```
+
 ### Install composer packages
 ```bash
 $ composer install
