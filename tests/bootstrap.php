@@ -5,7 +5,7 @@
  * @package Combined Calendar
  */
 
-if ( ! defined( 'WP_TESTS_DIR' ) ) {
+if ( ! getenv( 'WP_TESTS_DIR' ) ) {
 	putenv( 'WP_TESTS_DIR=' . rtrim( sys_get_temp_dir(), '/\\' ) . '/wordpress-tests-lib' );
 }
 
