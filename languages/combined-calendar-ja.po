@@ -56,3 +56,6 @@ msgid "Friday"
 msgstr "金"
 msgid "Saturday"
 msgstr "土"
+
+msgid "Setting"
+msgstr "設定"

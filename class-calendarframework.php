@@ -29,7 +29,7 @@ require_once 'admin/basecalendar-admin.php';
  * Class CalendarFramework
  */
 class CalendarFramework {
-	const TEXT_DOMAIN = 'yoyoginorth-calendar-framework';
+	const TEXT_DOMAIN = 'combined-calendar';
 	const LANG_DIR    = 'languages';
 
 	/**

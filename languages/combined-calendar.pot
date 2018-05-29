@@ -41,3 +41,6 @@ msgid "Friday"
 msgstr ""
 msgid "Saturday"
 msgstr ""
+
+msgid "Setting"
+msgstr ""
