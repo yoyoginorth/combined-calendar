@@ -1,17 +1,17 @@
 <?php
 /**
- * BaseCalendar class in Calendar Framework
+ * Base_Calendar class in Combined Calendar
  *
  * @package WordPress
- * @subpackage Calendar Framework
+ * @subpackage Combined Calendar
  * @since 1.0.0
  * @version 1.0.0
  */
 
 /**
- * Class BaseCalendar
+ * Class Base_Calendar
  */
-class BaseCalendar {
+class Base_Calendar {
 	/**
 	 * Year
 	 *
@@ -79,19 +79,19 @@ class BaseCalendar {
 			$this->set_date( $year, $month );
 		}
 
-		$cal_array = $this->get_completed_cal_array();
+		$cal_array = $this->get_combined_cal_array();
 		$cal_html  = $this->get_cal_with_html( $cal_array );
 
 		return $cal_html;
 	}
 
 	/**
-	 * Get completed calendar array, not only specific month (in near future)
+	 * Get combined calendar array, not only specific month (in near future)
 	 *
 	 * @return array Calendar Array
 	 * @since 1.0.0
 	 */
-	protected function get_completed_cal_array() {
+	protected function get_combined_cal_array() {
 		$cal = $this->get_cal_array();
 		return $cal;
 	}
@@ -172,13 +172,13 @@ class BaseCalendar {
 	 */
 	protected function get_week_header() {
 		$week_header = array(
-			__( 'Sunday', 'yoyoginorth-calendar-framework' ),
-			__( 'Monday', 'yoyoginorth-calendar-framework' ),
-			__( 'Tuesday', 'yoyoginorth-calendar-framework' ),
-			__( 'Wednesday', 'yoyoginorth-calendar-framework' ),
-			__( 'Thursday', 'yoyoginorth-calendar-framework' ),
-			__( 'Friday', 'yoyoginorth-calendar-framework' ),
-			__( 'Saturday', 'yoyoginorth-calendar-framework' ),
+			__( 'Sunday', 'combined-calendar' ),
+			__( 'Monday', 'combined-calendar' ),
+			__( 'Tuesday', 'combined-calendar' ),
+			__( 'Wednesday', 'combined-calendar' ),
+			__( 'Thursday', 'combined-calendar' ),
+			__( 'Friday', 'combined-calendar' ),
+			__( 'Saturday', 'combined-calendar' ),
 		);
 
 		$tmp_suffix_array = array();

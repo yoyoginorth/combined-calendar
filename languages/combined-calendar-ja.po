@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: 2018-05-12 00:00+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Ryo Tsugawa <ryo.tsugawa@gmail.com>\n"
-"Language-Team: https://github.com/yoyoginorth/calendarframework\n"
+"Language-Team: https://github.com/yoyoginorth/combined-calendar\n"
 "Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,9 +13,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#. Plugin title
+msgid "Combined Calendar"
+msgstr "コンバインドカレンダー"
+
 #. Description of the plugin/theme
-msgid "Simple Calendar Framework"
-msgstr "シンプルカレンダーフレームワーク"
+msgid "Display simple calendar"
+msgstr "シンプルなカレンダーを表示します"
 
 msgid "January"
 msgstr "1月"
