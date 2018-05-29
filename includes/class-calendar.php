@@ -1,6 +1,6 @@
 <?php
 /**
- * Calendar class extended from BaseCalendar class in Calendar Framework
+ * Calendar class extended from Base_Calendar class in Combined Calendar
  *
  * @package WordPress
  * @subpackage Calendar Framework
@@ -11,10 +11,10 @@
 /**
  * Require file
  */
-require_once 'class-basecalendar.php';
+require_once 'class-base-calendar.php';
 
 /**
  * Class Calendar
  */
-class Calendar extends BaseCalendar {
+class Calendar extends Base_Calendar {
 }

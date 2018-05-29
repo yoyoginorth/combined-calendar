@@ -1,5 +1,9 @@
+#. Plugin title
+msgid "Combined Calendar"
+msgstr ""
+
 #. Description of the plugin/theme
-msgid "Simple Calendar Framework"
+msgid "Display simple calendar"
 msgstr ""
 
 msgid "January"

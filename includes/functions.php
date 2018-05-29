@@ -1,9 +1,9 @@
 <?php
 /**
- * Functions in Calendar Framework
+ * Functions in Combined Calendar
  *
  * @package WordPress
- * @subpackage Calendar Framework
+ * @subpackage Combined Calendar
  * @since 1.0.0
  * @version 1.0.0
  */
@@ -19,7 +19,7 @@ require_once 'class-calendar.php';
  * @return string Output calendar html
  * @since 1.0.0
  */
-function yoyoginorth_show_calendar() {
-	$cal = new Calendar;
+function combined_calendar_show_calendar() {
+	$cal = new Calendar();
 	return $cal->show_cal();
 }
