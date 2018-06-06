@@ -61,5 +61,5 @@ msgstr "金"
 msgid "Saturday"
 msgstr "土"
 
-msgid "Setting"
-msgstr "設定"
+msgid "Combined Calendar Setting"
+msgstr "Combined Calendar 設定"
