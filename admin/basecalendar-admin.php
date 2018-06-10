@@ -11,13 +11,8 @@
 /**
  * Output_setting_page_html
  */
-function output_setting_page_html() { ?>
-	<div class="wrap">
-		<h2><?php _e( 'Combined Calendar Setting', 'combined-calendar' ); ?></h2>
-			<from method="post" action="options.php" novalidate="novalidate">
-			</from>
-	</div>
-<?php
+function output_setting_page_html() {
+	require_once( dirname( __FILE__ ) . '/views/html-setting-page.php' );
 }
 
 /**
