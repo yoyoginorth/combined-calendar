@@ -45,3 +45,6 @@ msgid "Friday"
 msgstr ""
 msgid "Saturday"
 msgstr ""
+
+msgid "Combined Calendar Setting"
+msgstr ""

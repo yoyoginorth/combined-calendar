@@ -60,3 +60,6 @@ msgid "Friday"
 msgstr "金"
 msgid "Saturday"
 msgstr "土"
+
+msgid "Combined Calendar Setting"
+msgstr "Combined Calendar 設定"
